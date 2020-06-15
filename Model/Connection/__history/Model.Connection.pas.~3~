@@ -1,0 +1,29 @@
+unit Model.Connection;
+
+interface
+
+uses
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Error,
+  FireDAC.UI.Intf,
+  FireDAC.Phys.Intf,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Pool,
+  FireDAC.Stan.Async,
+  FireDAC.Phys,
+  FireDAC.VCLUI.Wait,
+  FireDAC.Phys.MySQLDef,
+  FireDAC.Phys.FBDef,
+  FireDAC.Phys.IBBase,
+  FireDAC.Phys.FB,
+  FireDAC.Phys.MySQL,
+  Data.DB,
+  FireDAC.Comp.Client;
+
+function Connected : Integer;
+procedure Disconnected(Index : Integer);
+
+implementation
+
+end.
