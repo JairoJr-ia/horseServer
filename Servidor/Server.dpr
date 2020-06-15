@@ -4,15 +4,19 @@ program Server;
 
 {$R *.res}
 
-uses
-  System.SysUtils,
-  Model.Connection in '..\Model\Connection\Model.Connection.pas';
+uses Horse;
+
+var
+  App: THorse;
 
 begin
-  try
-    { TODO -oUser -cConsole Main : Insert code here }
-  except
-    on E: Exception do
-      Writeln(E.ClassName, ': ', E.Message);
-  end;
+  App := THorse.Create(9000);
+
+  App.Get('/ping',
+    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
+    begin
+      Res.Send('pong');
+    end);
+
+  App.Start;
 end.
